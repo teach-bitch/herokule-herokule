@@ -40,7 +40,7 @@ puts '=== Category DB created ==='
     category_id: Category.all.sample.id,
     title: Faker::JapaneseMedia::OnePiece.unique.akuma_no_mi,
     description: Faker::JapaneseMedia::OnePiece.quote,
-    price: rand(1.0..99.99),
+    price: rand(1.0..99.99).round(2),
     quantity: rand(1..100),
     reference: Faker::IDNumber.unique.spanish_citizen_number)
     # eventually add an image
@@ -61,7 +61,7 @@ puts '=== Basket DB created ==='
 50.times do
   facturation = Facturation.create!(
     basket_id: Basket.all.sample.id,
-    price: rand(1.0..1337.0))
+    price: rand(1.0..1337.0).round(2))
   print '.'
 end
 puts '=== Facturation DB created ==='
