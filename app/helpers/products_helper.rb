@@ -1,7 +1,12 @@
 module ProductsHelper
-  #je créer une methode pour trouver les produits ayant la même categorie que le produit sur la view show
-  def other_product(category)
-    Product.find_by(category_id: category)
-      puts ".O-P."*70
+  def category_helper
+      puts @product.title
+      all_categories = @product.product_categories
+      all_categories.each do |c|
+      cat_id = c.category_id
+      puts c.category_id
+      cat = Category.find_by(id: cat_id).title
+      puts cat
+    end  
   end
 end

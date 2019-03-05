@@ -39,7 +39,7 @@
                         </div>
                         <div class="col-md-5 ml-auto mr-auto">
                             <h2 class="title"><%= @product.title %></h2>
-                            <h5 class="category">Futur Brand - <%= @product.category.title %> </h5>
+                            <h5 class="category">Futur Brand - <%= @product.product_categories.categories.title %> </h5>
                             <h2 class="main-price"><%= @product.price.round(2) %>€</h2>
                             <% if @product.quantity.to_i > 0 %>
                             <div class="card-collapse justify-content-start">

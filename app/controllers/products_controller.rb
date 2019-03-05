@@ -12,9 +12,11 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
-    #j'appelle ma methode qui se trouve dans ProductsHelper avec en param le category_id du product show
-    #non utilisé
-    other_product(params[:category_id])
+    @product = Product.find(params[:id])
+    category_helper 
+    
+    
+    puts "SHOW" * 70
 
   end
 
