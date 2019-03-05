@@ -1,11 +1,11 @@
 <body class="login-page">
         <div class="page-header" filter-color="orange">
-        <div class="page-header-image" style="background-image:url(<%= asset_url 'devise/cat5' %>)"></div>
+        <div class="page-header-image" style="background-image:url(<%= asset_url 'devise/cat8' %>)"></div>
         <div class="content">
             <div class="container">
                 <div class="col-md-5 ml-auto mr-auto">
                     <div class="card card-login card-plain">
-                        <form class="form" method="" action="">
+                        <div>
                             <div class="card-header text-center">
                                 <div class="">
                                     <img src="<%= asset_url 'devise/SFF' %>" alt="SuperFuckFriends">
@@ -17,7 +17,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="now-ui-icons users_circle-08"></i></span>
                                     </div>
-                                    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Email" %>
+                                    <%= f.email_field :email, autocomplete: "email", class: "form-control", placeholder: "Email" %>
                                 </div>
                                 <div class="input-group form-group-no-border input-lg">
                                     <div class="input-group-prepend">
@@ -34,7 +34,7 @@
                               <h6>
                                 <%= render "devise/shared/links" %>
                               </h6>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
