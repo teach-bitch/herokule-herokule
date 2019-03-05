@@ -2,9 +2,9 @@ Rails.application.routes.draw do
   root "products#index"
   devise_for :users
 
-  resources :line_items, only: [:create, :edit, :update, :destroy]
-  resources :facturations, except: [:destroy]
-  resources :baskets, except: [:index]
+  resources :line_items, only: [:create, :edit, :update, :destroy, :new]
+  resources :facturations, except: [:destroy ,:new]
+  resources :baskets, except: [:index ,:new]
   resources :categories
   resources :products
 end
