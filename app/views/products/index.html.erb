@@ -51,12 +51,14 @@
                                             </label>
                                         </div>
                                       <!-- Boucle pour les marques -->
+                                      <% @products.each do |product| %>
                                         <div class="checkbox">
                                             <input id="checkbox_" type="checkbox">
                                             <label for="checkbox_">
-                                                <!-- Noms des marques -->
+                                                <%= product.brand %>
                                             </label>
                                         </div>
+                                      <% end %>
                                       <!-- Fin de boucle -->
                                     </div>
                                 </div>
@@ -99,7 +101,7 @@
                                         <div class="checkbox">
                                             <input id="checkbox_cat" type="checkbox">
                                             <label for="checkbox_cat">
-                                                Toutes <3315733FC3AE2D2EF632155D3CDCFF4
+                                                Toutes <3
                                             </label>
                                         </div>
                                       <% @categories.each do |category| %>
