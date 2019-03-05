@@ -56,9 +56,9 @@
                                 <td class="td-number">
 
                                     <div class="btn-group">
-                                        <button class="btn btn-info btn-sm btn-dribbble mr-2"> <i class="now-ui-icons ui-1_simple-delete"></i> </button>
+                                        <button class="btn btn-info btn-sm btn-round btn-dribbble mr-2"> <i class="now-ui-icons ui-1_simple-delete"></i> </button>
                                           <%= item.quantity %>
-                                        <button class="btn btn-info btn-sm btn-dribbble ml-2"> <i class="now-ui-icons ui-1_simple-add"></i> </button>
+                                        <button class="btn btn-info btn-sm btn-round btn-dribbble ml-2"> <i class="now-ui-icons ui-1_simple-add"></i> </button>
                                     </div>
                                 </td>
                                 <td class="td-number">
@@ -87,6 +87,7 @@
                                         <i class="now-ui-icons arrows-1_minimal-right"></i>
                                     </button>
                                 </td>
+                                <p><%= link_to "Retour aux produits", products_path, class: 'text-primary' %></p>
                             </tr>
                         </tbody>
                     </table>
@@ -96,38 +97,3 @@
     </div>
   </div>
 </div>
-
-<h2>Mon panier</h2>
-
-
-<table>
-  <thead>
-    <tr>
-      <th>Produits</th>
-      <th>Description</th>
-      <th>Prix</th>
-      <th>Quantités</th>
-      <th>Réference</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @basket.line_items.each do |item| %>
-      <tr>
-        <td><%= item.product.title %></td>
-        <td><%= item.product.description %></td>
-        <td><%= item.product.price %></td>
-        <td><%= item.quantity %></td>
-        <td><%= item.product.reference %></td>
-        <td><i class="fas fa-plus"></i></td>
-        <td><a href="<%= products_path %>"><i class="fas fa-minus"></i></a>
-        <td><i class="fas fa-trash-alt"></i></td>
-        <% price += (item.product.price * item.quantity) %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<p>Le total de votre panier est de <strong><%= price %> €</strong></p>
-
-<p><%= link_to "Retour aux produits", products_path %></p>
