@@ -18,3 +18,7 @@
 *= require css/demo.css
 
  */
+
+element.style {
+    background-color: #FFD6B6;
+}
