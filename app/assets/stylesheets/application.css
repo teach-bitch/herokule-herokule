@@ -16,6 +16,6 @@
 
  */
 
-element.style {
-    background-color: #FFD6B6;
+section.related-products {
+    background-color: #FFD6B6 !important;
 }
