@@ -52,7 +52,7 @@
 
         <div class="section">
             <div class="container">
-                <a href="#">Retour vers l'index</a>
+                <a href="#"><i class="now-ui-icons arrows-1_minimal-left"></i> Retour vers l'index</a>
                 <div class="row">
                     <div class="d-flex align-content-stretch flex-wrap">
                         <div class="col-md-6 d-flex align-content-center flex-wrap">
@@ -62,9 +62,13 @@
                             <h2 class="title"><%= @product.category.title %></h2>
                             <h5 class="category"> Futur Brand </h5>
                             <h2 class="main-price"><%= @product.price.round(2) %>€</h2>
+                            <% if @product.quantity.to_i > 0 %>
                             <div class="card-collapse justify-content-start">
-                                <button class="btn btn-primary">Add to Basket &nbsp;<i class="now-ui-icons shopping_cart-simple"></i></button>
+                                <button class="btn btn-primary" href="<%=  new_line_item_path(:product_id => @product.id)%>">Add to Basket &nbsp;<i class="now-ui-icons shopping_cart-simple"></i></button>
                             </div>
+                            <% else %>
+                            <h6>Out of stock</h6>
+                            <%end%>
                             <div class="card-collapse">
                                 <div class="card card-plain">
                                     <div class="card-header">
@@ -76,8 +80,7 @@
                                     <div class="card-header">
                                     Reference : <%= @product.reference %>
                                     </div>
-                                    <div class="card-body">
-                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -98,24 +101,19 @@
                                 </a>
                             </div>
                             <div class="card-body">
-                                <h6 class="category text-danger"><%= @product.category.title %></h6>
+                                <h6 class="category">Sphinx</h6>
                                 <h4 class="card-title">
-                                    <a href="#pablo" class="card-link">Sphinx</a>
+                                    <div class="card-link "><%= @product.category.title %></div>
                                 </h4>
-                                <div class="card-description">
-                                    <%= @product.description %>                                
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center">
-
-                                <div class="card-footer">
+                                <div class="card-footer d-flex justify-content-between align-items-center">
+                             
                                     <div class="price-container">
-                                        <span class="price"><%= @product.price.round(2) %>€</span>
+                                        <span class="price "><%= @product.price.round(2) %>€</span>
                                     </div>
-
-                                </div>
                                     <div class="row justify-content-center">
-                                        <button class="btn btn-primary mr-3">See Product &nbsp;</button>
+                                        <button class="btn btn-neutral">See Product &nbsp;</button>
                                     </div>
+                                   
                                 </div>
                             </div>
                         </div>
@@ -132,14 +130,16 @@
                                 <h4 class="card-title">
                                     <a href="#pablo" class="card-link"> Scottish Fold</a>
                                 </h4>
-                                <div class="card-description">
-                                    <%= @product.description %>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="price-container">
-                                        <span class="price"><%= @product.price.round(2) %>€</span>
-                                    </div>
 
+                                <div class="card-footer d-flex justify-content-between align-items-center">
+                             
+                                    <div class="price-container">
+                                        <span class="price "><%= @product.price.round(2) %>€</span>
+                                    </div>
+                                    <div class="row justify-content-center">
+                                        <button class="btn btn-neutral">See Product &nbsp;</button>
+                                    </div>
+                                   
                                 </div>
                             </div>
                         </div>
@@ -156,13 +156,16 @@
                                 <h4 class="card-title">
                                     <a href="#pablo" class="card-link">Sphinx</a>
                                 </h4>
-                                <div class="card-description">
-                                    <%= @product.description %>
-                                </div>
-                                <div class="card-footer">
+
+                                <div class="card-footer d-flex justify-content-between align-items-center">
+                             
                                     <div class="price-container">
-                                        <span class="price"><%= @product.price.round(2) %>€</span>
+                                        <span class="price "><%= @product.price.round(2) %>€</span>
                                     </div>
+                                    <div class="row justify-content-center">
+                                        <button class="btn btn-neutral">See Product &nbsp;</button>
+                                    </div>
+                                   
                                 </div>
                             </div>
                         </div>
@@ -179,13 +182,16 @@
                                 <h4 class="card-title">
                                     <a href="#pablo" class="card-link">Siamois</a>
                                 </h4>
-                                <div class="card-description">
-                                    <%= @product.description %>
-                                </div>
-                                <div class="card-footer">
+
+                                <div class="card-footer d-flex justify-content-between align-items-center">
+                             
                                     <div class="price-container">
-                                        <span class="price"><%= @product.price.round(2) %>€</span>
+                                        <span class="price "><%= @product.price.round(2) %>€</span>
                                     </div>
+                                    <div class="row justify-content-center">
+                                        <button class="btn btn-neutral">See Product &nbsp;</button>
+                                    </div>
+                                   
                                 </div>
                             </div>
                         </div>
