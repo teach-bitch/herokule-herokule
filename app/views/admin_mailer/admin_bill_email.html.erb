@@ -4,16 +4,22 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>client : <%= @user.email %> </h1>
+    <h1> client : <%= @user.first_name %> <%= @user.last_name %> </h1>
     <%= puts "je rentre dans admin_bill_email.html.erb apres @user.email" %>
     <p>
-      Viens d'acheter les produits suivant : <%= @facturation.basket.product.title %> x <%= @facturation.basket.quantity %> .
+      Vient d'acheter les produits suivant :
     </p>
       <%= puts "je rentre dans admin_bill_email.html.erb apres @facturation.basket.product.title" %>
-    <p>
-      pour la somme de : <%= @facturation.price %> €.
-            <%= puts "je rentre dans admin_bill_email.html.erb apres @facturation.price" %>
-    </p>
+      <ul>
+      <% @facturation.basket.line_items.all.each do |line| %>
+      <li>
+      <p><%= line.product.title %> : <%= line.product.price %> € X <%= line.quantity %> = <%=line.product.price*line.quantity%> €</P>
+      </li>
+      <% end %>
+      </ul>
+      <p>
+        pour la somme de :<b> <%= @facturation.price %> €</b>.
+      </p>
     <p>
       Pour accéder à ton espace admin, connecte-toi via : <%= @url %>.
     </p>
