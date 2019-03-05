@@ -38,8 +38,11 @@ ActiveRecord::Schema.define(version: 2019_03_05_090004) do
 
   create_table "baskets", force: :cascade do |t|
     t.bigint "user_id"
+    t.bigint "product_id"
+    t.integer "quantity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_baskets_on_product_id"
     t.index ["user_id"], name: "index_baskets_on_user_id"
   end
 
@@ -77,7 +80,7 @@ ActiveRecord::Schema.define(version: 2019_03_05_090004) do
   end
 
   create_table "products", force: :cascade do |t|
-    t.string "brand"
+    t.bigint "category_id"
     t.string "title"
     t.text "description"
     t.float "price"
@@ -85,6 +88,7 @@ ActiveRecord::Schema.define(version: 2019_03_05_090004) do
     t.string "reference"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_products_on_category_id"
   end
 
   create_table "users", force: :cascade do |t|
