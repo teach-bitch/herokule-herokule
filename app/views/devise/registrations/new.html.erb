@@ -27,3 +27,105 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+<body class="signup-page">
+
+  <div class="page-header section-image">
+    <div class="page-header-image" style="background-image:url(<%= asset_url 'devise/cat6' %>)"></div>
+    <div class="content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 ml-auto mr-auto">
+            <div class="info info-horizontal">
+              <div class="icon icon-primary">
+                <i class="now-ui-icons emoticons_satisfied"></i>
+              </div>
+              <div class="description">
+                <h5 class="info-title">Du fun</h5>
+                <p class="description">
+                  Papidoux et Mamidoux le disaient souvent, la vie, c'est avant tout du jus de pamplemousse, et du fun!
+                </p>
+              </div>
+            </div>
+            <div class="info info-horizontal">
+              <div class="icon icon-primary">
+                <i class="now-ui-icons objects_key-25"></i>
+              </div>
+              <div class="description">
+                <h5 class="info-title">Des avantages exclusifs</h5>
+                <p class="description">
+                  Bénéficie d'avantages exclusifs, comme un accès illimité à l'arbre magique et au buisson ardent.
+                </p>
+              </div>
+            </div>
+            <div class="info info-horizontal">
+              <div class="icon icon-info">
+                <i class="now-ui-icons users_single-02"></i>
+              </div>
+              <div class="description">
+                <h5 class="info-title">Des amis</h5>
+                <p class="description">
+                  Fais toi de nombreux nouveaux amis et correspondants étrangers grâce à nos évènements et rencontres.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mr-auto mt-3">
+              <div class="card card-signup">
+                <div class="card-body">
+                    <h4 class="card-title text-center">S'enregistrer</h4>
+                    <div>
+                      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                      <%= render "devise/shared/error_messages", resource: resource %>
+                        <div class="input-group field">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="now-ui-icons users_circle-08"></i></span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Prénom...">
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="now-ui-icons users_circle-08"></i></span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Nom...">
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="now-ui-icons ui-1_email-85"></i></span>
+                            </div>
+                                <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Email.." %>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="now-ui-icons ui-1_lock-circle-open"></i></span>
+                            </div>
+                            <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: "Mot de passe" %>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="now-ui-icons ui-1_lock-circle-open"></i></span>
+                            </div>
+                            <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control", placeholder:"Confirmation du mot de passe" %>
+                        </div>
+                        <!-- If you want to add a checkbox to this form, uncomment this code
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox">
+                                <span class="form-check-sign"></span>
+                                J'accepte les termes et
+                                <a href="#bite">conditions</a>.
+                            </label>
+                        </div>
+                        -->
+                        <div class="card-footer text-center">
+                            <%= f.submit "C'est parti !", class:"btn btn-primary btn-round btn-lg" %>
+                        </div>
+                      <% end %>
+                    </div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
