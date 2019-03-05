@@ -5,7 +5,7 @@ class Facturation < ApplicationRecord
 
   validates :price,
     presence: true,
-    numericality: { greater_than: 1 }
+    numericality: { greater_than: 0 }
 
 
   def bill_send
