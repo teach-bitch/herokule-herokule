@@ -11,18 +11,12 @@
  * It is generally better to create a new file per style scope.
  *
 
-*= require_self
 *= require css/bootstrap.min
 *= require css/now-ui-kit
-*= require css/demo.css
-<<<<<<< HEAD
 
-*= require my_custom_styles
-
-=======
- *= require_self
->>>>>>> master
+*= require custom_me.css
  */
+
  h4 {
-   color: red;
+   color: green!important;
  }
