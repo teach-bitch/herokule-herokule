@@ -134,13 +134,18 @@
                                     <a href="/products/<%= product.id %>">
                                         <h4 class="card-title"><%= product.title %></h4>
                                     </a>
-                                    <p class="card-description">
-                                        <%= product.description %>
-                                    </p>
-                                    <div class="card-footer">
-                                        <div class="price-container">
-                                            <span class="price"><%= product.price %> €</span>
+                                    <div class="card-body">
+                                        <div class="price-container pull-left">
+                                            <span class="price"><h5><%= product.price %> €</h5></span>
                                         </div>
+                                        <div class="pull-right">
+                                          <span><%= button_to 'Ajouter au panier', line_items_path(product_id: product), class: 'btn btn-dribbble btn-round' %></span>
+                                        </div><br/>
+                                    </div>
+                                    <div class="card-footer mt-3">
+                                      <p class="card-description">
+                                          <%= product.description %>
+                                      </p>
                                     </div>
                                 </div>
                             </div>
