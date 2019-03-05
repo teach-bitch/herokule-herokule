@@ -1,8 +1,15 @@
-Salut <%= @user.email %> Merci pour cet achat !
+Salut <%= @user.first_name %> <%= @user.first_name %>, merci pour cet achat !
 ==========================================================
 
-Tu as fais un achat de <%= @facturation.price %> € sur http://catpeach.com en utilisant l'e-mail suivant : <%= @user.email %>.
+Tu as fait l'achat des produits suivant :
+
+<% @facturation.basket.line_items.all.each do |line| %>
+
+<%= line.product.title %> : <%= line.product.price %> € X <%= line.quantity %> = <%=line.product.price*line.quantity%> €
+
+<% end %>
+pour la somme de : <%= @facturation.price %> €
 
 Pour accéder à ton espace client, connecte-toi via : <%= @url %>.
 
-À très vite sur monsite.fr !
+À très vite sur catpeach.fr !
