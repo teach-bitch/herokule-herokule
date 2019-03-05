@@ -6,8 +6,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :baskets
-  has_many :products, through: :baskets
+  has_one :basket
 
   def welcome_send
     UserMailer.welcome_email(self).deliver_now
