@@ -3,6 +3,10 @@ class Facturation < ApplicationRecord
   after_create :admin_bill_send
   belongs_to :basket
 
+  validates :price,
+    presence: true,
+    numericality: { greater_than: 0 }
+
 
   def bill_send
     UserMailer.bill_email(self).deliver_now

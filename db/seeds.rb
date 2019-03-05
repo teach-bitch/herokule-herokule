@@ -27,9 +27,9 @@ sleep(1)
 	user = User.create!(
     email: Faker::Internet.unique.email,
     password: Faker::Internet.password,
-    first_name: Faker::Superhero.prefix,
-    last_name: Faker::Movies::HarryPotter.character,
-    username: Faker::Kpop.girl_groups,
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.first_name,
+    username: Faker::Name.unique.first_name,
     birthdate: Faker::Date.birthday(9, 156))
     # is_admin is false by default
 	print '.'
@@ -46,7 +46,7 @@ puts '=== Category DB created ==='
 25.times do
   product = Product.create!(
     title: Faker::JapaneseMedia::OnePiece.unique.akuma_no_mi,
-    description: Faker::JapaneseMedia::OnePiece.quote,
+    description: Faker::TvShows::TheFreshPrinceOfBelAir.quote,
     price: rand(1.0..99.99).round(2),
     quantity: rand(1..100),
     brand: Faker::Gender.type,
