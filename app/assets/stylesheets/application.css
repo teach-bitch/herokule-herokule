@@ -15,9 +15,13 @@
 *= require css/bootstrap.min
 *= require css/now-ui-kit
 *= require css/demo.css
+<<<<<<< HEAD
 
 *= require my_custom_styles
 
+=======
+ *= require_self
+>>>>>>> master
  */
  h4 {
    color: red;
