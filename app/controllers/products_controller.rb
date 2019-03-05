@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+  include ProductsHelper
 
   # GET /products
   # GET /products.json
@@ -11,6 +12,10 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
+    #j'appelle ma methode qui se trouve dans ProductsHelper avec en param le category_id du product show
+    #non utilisé
+    other_product(params[:category_id])
+
   end
 
   # GET /products/new

@@ -15,3 +15,7 @@
 *= require css/now-ui-kit
 
  */
+
+element.style {
+    background-color: #FFD6B6;
+}
