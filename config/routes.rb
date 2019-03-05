@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
-  resources :line_items
-  root "home#index"
+  root "products#index"
+  devise_for :users
 
-  resources :facturations
-  resources :baskets
+  resources :line_items, only: [:create, :edit, :update, :destroy]
+  resources :facturations, except: [:destroy]
+  resources :baskets, except: [:index]
   resources :categories
   resources :products
-  devise_for :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
