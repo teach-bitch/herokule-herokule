@@ -14,6 +14,10 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     category_helper 
+    @all_product = Product.all
+    
+    #appelle la methode all cat prod du producthelper
+    #all_cat_prod
     
     
     puts "SHOW" * 70
