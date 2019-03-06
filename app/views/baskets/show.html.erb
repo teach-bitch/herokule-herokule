@@ -1,37 +1,46 @@
 <p id="notice"><%= notice %></p>
-<% price = 0 %>
 
-<h2>Mon panier</h2>
+<div class="container">
+  <h2>Mon panier</h2>
 
 
-<table>
-  <thead>
-    <tr>
-      <th>Produits</th>
-      <th>Description</th>
-      <th>Prix</th>
-      <th>Quantités</th>
-      <th>Réference</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @basket.line_items.each do |item| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= item.product.title %></td>
-        <td><%= item.product.description %></td>
-        <td><%= item.product.price %></td>
-        <td><%= item.quantity %></td>
-        <td><%= item.product.reference %></td>
-        <td><i class="fas fa-plus"></i></td>
-        <td><a href="<%= products_path %>"><i class="fas fa-minus"></i></a>
-        <td><i class="fas fa-trash-alt"></i></td>
-        <% price += (item.product.price * item.quantity) %>
+        <th>Produits</th>
+        <th>Description</th>
+        <th>Prix</th>
+        <th>Quantités</th>
+        <th>Réference</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @basket.line_items.each do |item| %>
+        <tr>
+          <td><%= item.product.title %></td>
+          <td><%= item.product.description %></td>
+          <td><%= item.product.price %></td>
+          <td><%= item.quantity %></td>
+          <td><%= item.product.reference %></td>
+          <td data-no-turbolink><%= link_to line_item_path(item.id, :operator => "add"), method: :PUT do %>
+            <i class="fas fa-plus"></i>
+          <% end %></td>
+          <td data-no-turbolink><%= link_to line_item_path(item.id, :operator => "reduce"), method: :PUT do %>
+            <i class="fas fa-minus"></i>
+          <% end %></td>  
+          <td><%= link_to line_item_path(item.id), method: :DELETE, data: {confirm: 'Tu es certain ?'} do %>
+            <i class="fas fa-trash-alt"></i>
+          <% end %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <p>Le total de votre panier est de <strong><%= @price.round(2) %> €</strong></p>
+  <p><%= link_to "Retour aux produits", products_path %></p>
+</div>
 
-<p>Le total de votre panier est de <strong><%= price %> €</strong></p>
 
-<p><%= link_to "Retour aux produits", products_path %></p>
+<% def add_quantity %>
+<% @a = true %> 
+<%end%>

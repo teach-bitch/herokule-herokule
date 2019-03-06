@@ -13,4 +13,15 @@ class Basket < ApplicationRecord
 		end
 		item
 	end 
+
+	def remove_product(product)
+		item = line_items.find_by(product: product)
+
+		if item 
+			item.quantity -= 1
+			if item.quantity == 0
+				item.destroy
+			end
+		end
+	end
 end
