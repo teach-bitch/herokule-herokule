@@ -25,3 +25,7 @@ div.related-products {
 main {
     padding-top: 60px;
 }
+
+btn-group button {
+    text-decoration: none!important;
+}
