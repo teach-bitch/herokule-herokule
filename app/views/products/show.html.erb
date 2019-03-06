@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-=======
-
-<%= link_to 'Edit', edit_product_path(@product) %> 
-
-
->>>>>>> e7923199798142847a78917e4b7cbf2d347b92b6
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,20 +16,11 @@
     <link href="../assets/css/now-ui-kit.css?v=1.2.0" rel="stylesheet" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="../assets/css/demo.css" rel="stylesheet" />
-<<<<<<< HEAD
-
-=======
-    <!-- notre css -->
-    <link href="../assets/stylesheets/application.css" rel="stylesheet" />
->>>>>>> e7923199798142847a78917e4b7cbf2d347b92b6
 
 </head>
 
 <body class="product-page">
-<<<<<<< HEAD
 <main>
-=======
->>>>>>> e7923199798142847a78917e4b7cbf2d347b92b6
 
     <div class="wrapper">
 
@@ -50,20 +34,12 @@
                         </div>
                         <div class="col-md-5 ml-auto mr-auto">
                             <h2 class="title"><%= @product.title %></h2>
-<<<<<<< HEAD
                             <h5 class="category"><%= @product.brand %> - <%= @cat %> </h5>
                             <h2 class="main-price"><%= @product.price.round(2) %>€</h2>
                             <% if @product.quantity.to_i > 0 %>
                             <div class="card-collapse justify-content-start">
                                 <span><%= button_to 'Ajouter au panier', line_items_path(product_id: @product.id), class: 'btn btn-primary' %><i class="now-ui-icons shopping_cart-simple"></i></span>
                            
-=======
-                            <h5 class="category">Futur Brand - <%= @product.category.title %> </h5>
-                            <h2 class="main-price"><%= @product.price.round(2) %>€</h2>
-                            <% if @product.quantity.to_i > 0 %>
-                            <div class="card-collapse justify-content-start">
-                                <button class="btn btn-primary" href="<%=  new_basket_path(:product_id => @product.id)%>">Add to Basket &nbsp;<i class="now-ui-icons shopping_cart-simple"></i></button>
->>>>>>> e7923199798142847a78917e4b7cbf2d347b92b6
                             </div>
                             <% else %>
                             <h6>Out of stock</h6>
@@ -88,19 +64,12 @@
 
             </div>
         </div>
-<<<<<<< HEAD
-=======
-        <!-- pour l'instant je laisse data-background-color="black" parce que quand je le retire ça ne recupere pas le css de la class section.related-products -->
->>>>>>> e7923199798142847a78917e4b7cbf2d347b92b6
         <div class="section related-products" data-background-color="black" >
             <div class="container">
                 <h3 class="title text-center">You may also be interested in:</h3>
                 <div class="row">
-<<<<<<< HEAD
                     <% @all_product.each do |product|%>
           
-=======
->>>>>>> e7923199798142847a78917e4b7cbf2d347b92b6
 
                           <div class="col-sm-6 col-md-3">
                               <div class="card card-product">
@@ -110,45 +79,27 @@
                                       </a>
                                   </div>
                                   <div class="card-body">
-<<<<<<< HEAD
                                       <h6 class="category"><%= product.brand %></h6>
                                       <h5 class="card-title">
                                           <div class="card-link "><%= product.title %></div>
-=======
-                                      <h6 class="category">Sphinx</h6>
-                                      <h5 class="card-title">
-                                          <div class="card-link "><%= @product.title %></div>
->>>>>>> e7923199798142847a78917e4b7cbf2d347b92b6
                                       </h5>
                                       <div class="card-footer d-flex justify-content-between align-items-center">
                                    
                                           <div class="price-container">
-<<<<<<< HEAD
                                               <span class="price "><%= product.price.round(2) %>€</span>
                                           </div>
                                           <div class="row justify-content-center">
                                                 <span><%= button_to 'Voir le produit', product_path(product), class: 'btn btn-neutral', method: :get %></span>
-=======
-                                              <span class="price "><%= @product.price.round(2) %>€</span>
-                                          </div>
-                                          <div class="row justify-content-center">
-                                              <button class="btn btn-neutral">See Product &nbsp;</button>
->>>>>>> e7923199798142847a78917e4b7cbf2d347b92b6
                                           </div>
                                          
                                       </div>
                                   </div>
                               </div>
                           </div>
-<<<<<<< HEAD
                         
             
                  <% end%>
          <!--  les anciennes cards fake avec les anciennes images     
-=======
-
-                
->>>>>>> e7923199798142847a78917e4b7cbf2d347b92b6
                     <div class="col-sm-6 col-md-3">
                         <div class="card card-product">
                             <div class="card-image">
@@ -166,11 +117,7 @@
                              
                                     <div class="price-container">
                                         <span class="price "><%= @product.price.round(2) %>€</span>
-<<<<<<< HEAD
                                     </div><%= products_path %>
-=======
-                                    </div>
->>>>>>> e7923199798142847a78917e4b7cbf2d347b92b6
                                     <div class="row justify-content-center">
                                         <button class="btn btn-neutral">See Product &nbsp;</button>
                                     </div>
@@ -231,20 +178,14 @@
                             </div>
                         </div>
                     </div>
-<<<<<<< HEAD
         -->
-=======
->>>>>>> e7923199798142847a78917e4b7cbf2d347b92b6
                 </div>
                 
             </div>
         </div>
        
     </div>
-<<<<<<< HEAD
 </main>
-=======
->>>>>>> e7923199798142847a78917e4b7cbf2d347b92b6
 </body>
 <!--   Core JS Files   -->
 <script src="../assets/js/core/jquery.3.2.1.min.js" type="text/javascript"></script>
