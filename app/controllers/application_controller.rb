@@ -1,4 +1,4 @@
 class ApplicationController < ActionController::Base
 	include CurrentBasket
-	before_action :set_basket
+	before_action :current_basket
 end
