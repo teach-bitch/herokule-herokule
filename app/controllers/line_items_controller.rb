@@ -43,23 +43,24 @@ class LineItemsController < ApplicationController
   # PATCH/PUT /line_items/1
   # PATCH/PUT /line_items/1.json
   def update
-    @line_item_total = @line_item.product.price * @line_item.quantity.round(2)
     @operator = params[:operator]
     respond_to do |format|
       if  @operator == "add"
         @line_item.update(:quantity => @line_item.quantity + 1 )
+        @line_item_total = @line_item.product.price * @line_item.quantity.round(2)
         format.html { redirect_to @line_item.basket, notice: 'Line item was successfully updated.' }
         format.js # { render :show, status: :ok, location: @line_item }
       elsif  @operator == "reduce"
         @line_item.update(:quantity => @line_item.quantity - 1)
+        @line_item_total = @line_item.product.price * @line_item.quantity.round(2)
         if @line_item.quantity == 0
           @line_item.destroy
         end
         format.html { redirect_to @line_item.basket, notice: 'Line item was successfully updated.' }
-        format.js # { render :show, status: :ok, location: @line_item }
+        format.js
       else
         format.html { render :edit }
-        format.js # { render json: @line_item.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end

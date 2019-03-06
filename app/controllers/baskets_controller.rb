@@ -75,7 +75,7 @@ class BasketsController < ApplicationController
 
     def set_price
       @price = 0
-      @basket.line_items.each do |item| 
+      @basket.line_items.each do |item|
         @price += (item.product.price * item.quantity)
       end
       @price.round(2)

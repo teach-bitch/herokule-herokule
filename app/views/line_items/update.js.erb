@@ -1,5 +1,6 @@
-
-console.log("<%= @line_item_total %>")
-
-$('#item_quantity_<%= @line_item.id%>').html("<%= @line_item.quantity %>")
-$('#item_total_<%= @line_item.id %>').html("<%= @line_item_total.round(2) %>")
+<% if @line_item.quantity == 0 %>
+  $('#item_fulldiv_<%= @line_item.id %>').fadeOut('2000')
+<% else %>
+  $('#item_quantity_<%= @line_item.id%>').html("<%= @line_item.quantity %>")
+  $('#item_total_<%= @line_item.id %>').html("<%= @line_item_total.round(2) %><small>€</small>")
+<% end %>
