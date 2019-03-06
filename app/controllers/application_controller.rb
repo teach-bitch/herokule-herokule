@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
 	include CurrentBasket
-	before_action :set_basket
+	before_action :current_basket
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   protected
