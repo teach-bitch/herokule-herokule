@@ -2,6 +2,8 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   include ProductsHelper
 
+  include ProductsHelper
+
   # GET /products
   # GET /products.json
   def index
@@ -13,11 +15,9 @@ class ProductsController < ApplicationController
   # GET /products/1.json
   def show
     @product = Product.find(params[:id])
-    category_helper 
     @all_product = Product.all
     
-    #appelle la methode all cat prod du producthelper
-    #all_cat_prod
+    set_cats
     
     
     puts "SHOW" * 70
