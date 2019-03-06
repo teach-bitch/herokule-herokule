@@ -1,8 +1,8 @@
-module CurrentBasket
+module CurrentBasket 
 	private
 
 	def set_basket
-		@basket = Basket.find_by(id: session[:basket_id]) || Basket.create
+		@basket = Basket.find_by(id: session[:basket_id]) || Basket.create(user_id: current_user.id)
 		session[:basket_id] ||= @basket.id
 	end
 end
