@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+  include ProductsHelper
 
   include ProductsHelper
 
@@ -13,6 +14,7 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
+<<<<<<< HEAD
     @product = Product.find(params[:id])
     category_helper 
     @all_product = Product.all
@@ -21,6 +23,11 @@ class ProductsController < ApplicationController
     
     
     puts "SHOW" * 70
+=======
+    #j'appelle ma methode qui se trouve dans ProductsHelper avec en param le category_id du product show
+    #non utilisé
+    other_product(params[:category_id])
+>>>>>>> e7923199798142847a78917e4b7cbf2d347b92b6
 
   end
 
