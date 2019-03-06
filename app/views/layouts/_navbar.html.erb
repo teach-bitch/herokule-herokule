@@ -13,14 +13,18 @@
         <div class="collapse navbar-collapse" data-nav-image="./assets/img/blurred-image-1.jpg" data-color="orange">
             <ul class="navbar-nav ml-auto">
                 <li>
-                  <a href="/baskets/" class="nav-link text-primary">
+                  <a href="<%= basket_path(@basket.id) %>" class="nav-link text-primary">
                     <i class="now-ui-icons shopping_cart-simple"></i> Mon Panier
                   </a>
                 </li>
                 <li class="nav-item dropdown">
                     <a href="" class="nav-link dropdown-toggle text-primary" id="navbarDropdownMenuLink" data-toggle="dropdown">
                         <i class="now-ui-icons users_single-02" aria-hidden="true"></i>
-                        <p>Compte</p>
+                        <% if user_signed_in? %>
+                          <p>Bonjour, <strong><%= current_user.username %></strong></p>
+                        <% else %>
+                          <p>Compte</p>
+                        <% end %>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                       <%= render 'devise/menu/login_items' %>

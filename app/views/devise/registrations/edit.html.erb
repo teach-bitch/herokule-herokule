@@ -16,16 +16,6 @@
                             </p>
                               <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
                               <%= render "devise/shared/error_messages", resource: resource %>
-                              <label>Nom</label>
-                              <div class="input-group">
-                                  <div class="input-group-prepend">
-                                      <span class="input-group-text"><i class="now-ui-icons ui-1_email-85"></i></span>
-                                  </div>
-                                  <%= f.text_field :last_name, autocomplete: "last_name", class:"form-control", placeholder:"Nom" %>
-                                  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-                                    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-                                  <% end %>
-                              </div>
                               <label>Prénom</label>
                               <div class="input-group">
                                   <div class="input-group-prepend">
@@ -34,6 +24,16 @@
                                   <%= f.text_field :first_name, autocomplete: "first_name", class:"form-control", placeholder:"Prénom" %>
                                   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
                                     <div>En attente de confirmation pour: <%= resource.unconfirmed_email %></div>
+                                  <% end %>
+                              </div>
+                              <label>Nom</label>
+                              <div class="input-group">
+                                  <div class="input-group-prepend">
+                                      <span class="input-group-text"><i class="now-ui-icons ui-1_email-85"></i></span>
+                                  </div>
+                                  <%= f.text_field :last_name, autocomplete: "last_name", class:"form-control", placeholder:"Nom" %>
+                                  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                                    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
                                   <% end %>
                               </div>
                               <label>Nom d'utilisateur</label>
@@ -46,15 +46,25 @@
                                     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
                                   <% end %>
                               </div>
-                                <label>Email</label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="now-ui-icons ui-1_email-85"></i></span>
-                                    </div>
-                                    <%= f.email_field :email, autocomplete: "email", class:"form-control", placeholder:"Email..." %>
-                                    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-                                      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-                                    <% end %>
+                              <label>Date de naissance</label>
+                              <div class="input-group">
+                                  <div class="input-group-prepend">
+                                      <span class="input-group-text"><i class="now-ui-icons ui-1_email-85"></i></span>
+                                  </div>
+                                  <%= f.date_field :birthdate, autocomplete: "birthdate", class:"form-control" %>
+                                  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                                    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+                                  <% end %>
+                              </div>
+                              <label>Email</label>
+                              <div class="input-group">
+                                  <div class="input-group-prepend">
+                                      <span class="input-group-text"><i class="now-ui-icons ui-1_email-85"></i></span>
+                                  </div>
+                                  <%= f.email_field :email, autocomplete: "email", class:"form-control", placeholder:"Email..." %>
+                                  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                                    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+                                  <% end %>
                                 </div>
                                 <label>Ancien mot de passe</label>
                                 <div class="input-group">
