@@ -56,18 +56,20 @@
                                 <td class="td-number">
 
                                     <div class="btn-group">
-                                      <%= link_to line_item_path(item.id, :operator => "reduce"), method: :PUT do %>
+                                      <%= link_to line_item_path(item.id, :operator => "reduce"), method: :PUT, remote: true do %>
                                         <button class="btn btn-info btn-sm btn-round btn-dribbble mr-2">
                                           <i class="now-ui-icons ui-1_simple-delete"></i>
                                         </button>
                                       <% end %>
+                                      <div id="item_quantity_<%= item.id%>">
                                           <%= item.quantity %>
-                                        <%= link_to line_item_path(item.id, :operator => "add"), method: :PUT do %>
+                                      </div>
+                                        <%= link_to line_item_path(item.id, :operator => "add"), method: :PUT, remote: true do %>
                                           <button  class="btn btn-info btn-sm btn-round btn-dribbble ml-2">
                                               <i class="now-ui-icons ui-1_simple-add"></i>
                                           </button>
                                         <% end %>
-                                <td class="td-number">
+                                <td class="td-number" id="item_total_<%= item.id %>">
                                     <%= (item.product.price * item.quantity).round(2) %><small>€</small>
                                 </td>
                                 <td class="td-actions">
