@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+
   include ProductsHelper
 
   # GET /products
@@ -16,8 +17,7 @@ class ProductsController < ApplicationController
     category_helper 
     @all_product = Product.all
     
-    #appelle la methode all cat prod du producthelper
-    #all_cat_prod
+
     
     
     puts "SHOW" * 70
