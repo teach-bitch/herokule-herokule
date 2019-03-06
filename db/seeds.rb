@@ -38,7 +38,7 @@ puts '=== User DB created ==='
 
 5.times do
   category = Category.create!(
-    title: Faker::Food.unique.fruits)
+    title: Faker::Food.fruits)
   print '.'
 end
 puts '=== Category DB created ==='
