@@ -1,13 +1,12 @@
 module ProductsHelper
 
   def set_cats
-    all_cat_categories = @product.categories # toutes les catégories auxquelles le chat appartient
-    puts all_cat_categories
-    puts 
+    @all_cat_categories = @product.categories # toutes les catégories auxquelles le chat appartient
+    puts @all_cat_categories
 
     @the_cats = []
 
-    all_cat_categories.each do |category|
+    @all_cat_categories.each do |category|
       cats = category.products # tout les chats appartenant à la catégorie de la boucle
       cats.each do |cat|
         @the_cats << cat

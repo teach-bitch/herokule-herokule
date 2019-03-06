@@ -34,8 +34,8 @@
                         </div>
                         <div class="col-md-5 ml-auto mr-auto">
                             <h2 class="title"><%= @product.title %></h2>
-                            <h5 class="category"><%= @product.brand %> - <%= @cat %> </h5>
-                            <h2 class="main-price"><%= @product.price.round(2) %>€</h2>
+                            <h5 class="category"><%= @product.brand %> </h5>
+                            <h2 class="main-price"><%= @product.price %>€</h2>
                             <% if @product.quantity.to_i > 0 %>
                             <div class="card-collapse justify-content-start">
                                 <span><%= button_to 'Ajouter au panier', line_items_path(product_id: @product.id), class: 'btn btn-primary' %><i class="now-ui-icons shopping_cart-simple"></i></span>
@@ -55,6 +55,12 @@
                                     <div class="card-header">
                                     Reference : <%= @product.reference %>
                                     </div>
+                                    <div class="card-header">
+                                    Categories : 
+                                    <% @product.categories do |cat|%>
+                                    <span class="badge badge-neutral"><% cat.title %></span>
+                                    <%end%>
+                                    </div>
 
                                 </div>
                             </div>
@@ -68,39 +74,33 @@
             <div class="container">
                 <h3 class="title text-center">You may also be interested in:</h3>
                 <div class="row">
-                        <% @the_cats.take(10) do%>
-                    <% @the_cats.each do |product|%>
-          
+                    <% @the_cats.sample(4).each do |product|%>
+                        <div class="col-sm-6 col-md-3">
+                            <div class="card card-product">
+                                <div class="card-image">
+                                    <a href="#">
+                                        <img class="img rounded" src="https://static.wamiz.fr/images/animaux/chats/large/sphynx-2901.jpg" />
+                                    </a>
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="category"><%= product.brand %></h6>
+                                    <h5 class="card-title">
+                                        <div class="card-link "><%= product.title %></div>
+                                    </h5>
+                                    <div class="card-footer d-flex justify-content-between align-items-center">
 
-                          <div class="col-sm-6 col-md-3">
-                              <div class="card card-product">
-                                  <div class="card-image">
-                                      <a href="#">
-                                          <img class="img rounded" src="https://static.wamiz.fr/images/animaux/chats/large/sphynx-2901.jpg" />
-                                      </a>
-                                  </div>
-                                  <div class="card-body">
-                                      <h6 class="category"><%= product.brand %></h6>
-                                      <h5 class="card-title">
-                                          <div class="card-link "><%= product.title %></div>
-                                      </h5>
-                                      <div class="card-footer d-flex justify-content-between align-items-center">
-                                   
-                                          <div class="price-container">
-                                              <span class="price "><%= product.price.round(2) %>€</span>
-                                          </div>
-                                          <div class="row justify-content-center">
-                                                <span><%= button_to 'Voir le produit', product_path(product), class: 'btn btn-neutral', method: :get %></span>
-                                          </div>
-                                         
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-                        <%end%>
-                        
-            
-                 <% end%>
+                                        <div class="price-container">
+                                            <span class="price "><%= product.price %>€</span>
+                                        </div>
+                                        <div class="row justify-content-center">
+                                              <span><%= button_to 'Voir le produit', product_path(product), class: 'btn btn-neutral', method: :get %></span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <% end%>
          <!--  les anciennes cards fake avec les anciennes images     
                     <div class="col-sm-6 col-md-3">
                         <div class="card card-product">
