@@ -43,10 +43,7 @@ class LineItemsController < ApplicationController
   # PATCH/PUT /line_items/1
   # PATCH/PUT /line_items/1.json
   def update
-    puts "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
     @operator = params[:operator]
-    puts  @operator
-    puts "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
     respond_to do |format|
       if  @operator == "add"
         @line_item.update(:quantity => @line_item.quantity + 1 )
