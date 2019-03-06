@@ -68,7 +68,8 @@
             <div class="container">
                 <h3 class="title text-center">You may also be interested in:</h3>
                 <div class="row">
-                    <% @all_product.each do |product|%>
+                        <% @the_cats.take(10) do%>
+                    <% @the_cats.each do |product|%>
           
 
                           <div class="col-sm-6 col-md-3">
@@ -96,6 +97,7 @@
                                   </div>
                               </div>
                           </div>
+                        <%end%>
                         
             
                  <% end%>

@@ -1,29 +1,44 @@
 module ProductsHelper
 
+  def set_cats
+    all_cat_categories = @product.categories # toutes les catégories auxquelles le chat appartient
+    puts all_cat_categories
+    puts 
 
-  def category_helper
-    puts @product.title
-    all_categories_of_product_show = @product.product_categories
-    puts "all cat" * 10  
-    puts all_categories_of_product_show 
-      puts "all cat" * 10
-      all_categories_of_product_show.each do |c|
-        puts "c" * 10
-        puts c
-        puts "c" * 10
-        @cat_id = c.category_id
-        puts "cat_id" * 10
-        puts c.category_id
-        puts "cat_id" * 10
-        cat = Category.find_by(id: c.category_id).title
-        
-        puts "cat title" * 10
-        puts cat
-        puts "cat title" * 10
+    @the_cats = []
 
-        
-      end 
+    all_cat_categories.each do |category|
+      cats = category.products # tout les chats appartenant à la catégorie de la boucle
+      cats.each do |cat|
+        @the_cats << cat
+      end
+    end
+    puts @the_cats
   end
+
+  # def category_helper
+  #   puts @product.title
+  #   all_categories_of_product_show = @product.product_categories
+  #   puts "all cat" * 10  
+  #   puts all_categories_of_product_show 
+  #     puts "all cat" * 10
+  #     all_categories_of_product_show.each do |c|
+  #       puts "c" * 10
+  #       puts c
+  #       puts "c" * 10
+  #       @cat_id = c.category_id
+  #       puts "cat_id" * 10
+  #       puts c.category_id
+  #       puts "cat_id" * 10
+  #       cat = Category.find_by(id: c.category_id).title
+  #       puts "product.categories"
+  #       puts @product.categories
+  #       puts "product.categories"
+  #       puts "cat title" * 10
+  #       puts cat
+  #       puts "cat title" * 10    
+  #     end 
+  # end
 
 
   
