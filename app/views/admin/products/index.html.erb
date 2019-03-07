@@ -54,7 +54,7 @@
                       </label>
                     </div>
                     <!-- Boucle pour les marques -->
-                    <% @products.each do |product| %>
+                    <% @products.reverse.each do |product| %>
                     <div class="checkbox">
                       <input id="checkbox_" type="checkbox">
                       <label for="checkbox_">
@@ -107,12 +107,19 @@
         <div class="col-md-9">
             <h1>ZONE ADMIN PRODUCTS INDEX</h1><br>
           <div class="row">
-          <% @products.each do |product|%>
+          <% @products.reverse.each do |product|%>
           <div class="col-lg-4 col-md-6">
             <div class="card card-product">
               <div class="card-image">
                 <a href="/products/<%= product.id %>">
+
+                  <%if product.image.attached?%>
+                  <%= image_tag product.image, alt: 'image' %>
+                  <%else%>
                   <img class="img rounded" src="https://static.wamiz.fr/images/animaux/chats/large/sphynx-2901.jpg" />
+                  <%end%>
+
+
                 </a>
               </div>
               <div class="card-body">
