@@ -23,7 +23,7 @@ class User < ApplicationRecord
 
   validates :username,
     presence: true,
-    length: { in: 2..15 },
+    length: { in: 2..30 },
     uniqueness: { message: "Nom d'utilisateur déjà pris" }
 
 
