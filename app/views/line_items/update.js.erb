@@ -9,3 +9,7 @@ console.log("<%= @price %>");
 <% end %>
 
 $('#total_price').html("<%= @price %><small>€</small>")
+
+<% if @price == 0 %>
+  $('#checkout-btn').fadeOut('2000')
+<% end %>
