@@ -1,6 +1,7 @@
 class BasketsController < ApplicationController
+  include BasketsHelper
   before_action :set_basket, only: [:show, :edit, :update, :destroy]
-  before_action :set_price, only: [:show]
+  before_action :set_price
 
   # GET /baskets
   # GET /baskets.json
@@ -11,6 +12,7 @@ class BasketsController < ApplicationController
   # GET /baskets/1
   # GET /baskets/1.json
   def show
+
   end
 
   # GET /baskets/new
@@ -73,11 +75,4 @@ class BasketsController < ApplicationController
       params.require(:basket).permit(:quantity)
     end
 
-    def set_price
-      @price = 0
-      @basket.line_items.each do |item|
-        @price += (item.product.price * item.quantity)
-      end
-      @price.round(2)
-    end
 end

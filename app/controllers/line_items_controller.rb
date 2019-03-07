@@ -1,4 +1,5 @@
 class LineItemsController < ApplicationController
+  include BasketsHelper
   before_action :set_line_item, only: [:show, :edit, :update, :destroy]
 
   # GET /line_items
@@ -44,13 +45,18 @@ class LineItemsController < ApplicationController
     @operator = params[:operator]
     respond_to do |format|
       if  @operator == "add"
+        puts "##"*100
+        puts @price
+        puts "##"*100
         @line_item.update(:quantity => @line_item.quantity + 1 )
         @line_item_total = @line_item.product.price * @line_item.quantity.round(2)
+        set_price
         format.html { redirect_to @line_item.basket, notice: 'Line item was successfully updated.' }
         format.js # { render :show, status: :ok, location: @line_item }
       elsif  @operator == "reduce"
         @line_item.update(:quantity => @line_item.quantity - 1)
         @line_item_total = @line_item.product.price * @line_item.quantity.round(2)
+        set_price
         if @line_item.quantity == 0
           @line_item.destroy
         end
