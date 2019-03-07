@@ -138,9 +138,16 @@
                                         <div class="price-container pull-left">
                                             <span class="price"><h5><%= product.price %> €</h5></span>
                                         </div>
+                                        <% if user_signed_in? %>
                                         <div class="pull-right">
                                           <span><%= button_to 'Ajouter au panier', line_items_path(product_id: product), class: 'btn btn-dribbble btn-round' %></span>
                                         </div><br/>
+                                        <% else %>
+                                        <div class="pull-right">
+                                          <span><%= button_to 'Ajouter au panier', new_user_session_path, class: 'btn btn-dribbble btn-round' %></span>
+                                        </div><br/>
+                                        <% end %>
+
                                     </div>
                                     <div class="card-footer mt-3">
                                       <p class="card-description">

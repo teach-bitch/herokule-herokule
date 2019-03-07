@@ -12,11 +12,13 @@
         </div>
         <div class="collapse navbar-collapse" data-nav-image="" data-color="orange">
             <ul class="navbar-nav ml-auto">
+              <% if user_signed_in? %>
                 <li>
                   <a href="<%= basket_path(@current_basket.id) %>" class="nav-link text-primary">
                     <i class="now-ui-icons shopping_cart-simple"></i> Mon Panier
                   </a>
                 </li>
+              <% end %>
                 <li class="nav-item dropdown">
                     <a href="" class="nav-link dropdown-toggle text-primary" id="navbarDropdownMenuLink" data-toggle="dropdown">
                         <i class="now-ui-icons users_single-02" aria-hidden="true"></i>
