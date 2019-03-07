@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+
+  namespace :admin do
+  resources :users
+  resources :product
+  root 'admin#index'
+end
+
+
   root "products#index"
   get '/home/index'
   devise_for :users
