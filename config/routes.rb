@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :line_items, only: [:create, :update, :destroy]
   resources :facturations, except: [:destroy ,:new]
   resources :baskets, only: [:create, :update, :destroy, :show]
+    resources :charges
   resources :categories, only: [:create, :update, :destroy, :show, :index]
   resources :products
 end
