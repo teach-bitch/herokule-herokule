@@ -18,7 +18,7 @@ class User < ApplicationRecord
   validates :last_name,
     presence: true,
     length: { in: 2..30 },
-    :format => { :with => /\A[a-zA-Z-\s]+\z/,
+    :format => { :with => /\A[a-zA-Z\-\s]+\z/,
     :message => "Seule les lettres et espaces sont autorisés & 2 caractères minimum" }
 
   validates :username,
