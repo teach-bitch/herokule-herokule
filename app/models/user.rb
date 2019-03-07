@@ -8,6 +8,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_one :basket
+  has_many :facturations
 
   validates :first_name,
     presence: true,
