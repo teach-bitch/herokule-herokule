@@ -30,7 +30,7 @@
                             </th>
                         </thead>
                         <tbody>
-                          <% @basket.line_items.each do |item| %>
+                          <% @current_basket.line_items.each do |item| %>
                             <tr id="item_fulldiv_<%= item.id %>">
                                 <td>
                                     <div class="img-container">

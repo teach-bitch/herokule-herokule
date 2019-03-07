@@ -1,15 +1,14 @@
-<p id="notice"><%= notice %></p>
-
-<div class="main">
-<div class="page-header page-header-small">
-            <div class="page-header-image" data-parallax="true" style="background-image: url(&quot;../assets/index_product_landing_page.jpg&quot;); transform: translate3d(0px, 0px, 0px);">
+<body class="contact-page">
+    <div class="wrapper">
+        <div class="page-header page-header-small">
+            <div class="page-header-image" data-parallax="true" style="background-image:url(<%= asset_url 'devise/cat8' %>)">
             </div>
-            <div class="content-center">
-                <h1 class="title">Plus de 1200 photos de chats à portée de panier.</h1>
-                <div class="text-center">
+                <div class="content-center">
+                  <h1 class="title">Plus de 1200 photos de chats à portée de panier.</h1>
                 </div>
             </div>
-        </div>
+            </div>
+
   <div class="section">
     <div class="container">
       <div class="row">
@@ -87,7 +86,7 @@
                     <div class="checkbox">
                       <input id="checkbox_cat" type="checkbox">
                       <label for="checkbox_cat">
-                        Toutes 
+                        Toutes
                       </label>
                     </div>
                     <% @categories.each do |category| %>
@@ -138,7 +137,7 @@
           <% end%>
           </div>
         </div>
-        
+
         <!-- Fin de la Carte Produit -->
       </div>
     </div>
