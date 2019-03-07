@@ -81,6 +81,7 @@ puts '=== LineItem DB created ==='
 
 50.times do
   facturation = Facturation.create!(
+		user_id: User.all.sample.id,
     basket_id: Basket.all.sample.id,
     price: rand(1.0..1337.0).round(2))
   print '.'
