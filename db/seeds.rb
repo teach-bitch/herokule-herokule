@@ -34,6 +34,16 @@ sleep(1)
     # is_admin is false by default
 	print '.'
 end
+		User.create!(
+			first_name: "papidou",
+			last_name: "peepoodoo",
+			username:"peepoodo" ,
+			email: "peepoodo@hotmail.fr",
+			password: "1a2z3e",
+			password_confirmation: "1a2z3e",
+			birthdate: Faker::Date.birthday(9, 156),
+			is_admin:true)
+
 puts '=== User DB created ==='
 
 5.times do
