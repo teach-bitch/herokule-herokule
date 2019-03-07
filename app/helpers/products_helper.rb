@@ -16,4 +16,6 @@ module ProductsHelper
     end
     puts @the_cats
   end
+
+
 end
