@@ -112,3 +112,11 @@ div.container-signup {
 a {
     border: none !important;
 }
+
+@font-face {
+  font-family: 'nucleo-outline';
+  src: font-url("/assets/fonts/nucleo-outline.eot");
+  src: font-url("/assets/fonts/nucleo-outline.eot?#iefix") format("embedded-opentype"), font-url("/assets/fonts/nucleo-outline.woff2") format("woff2"), font-url("/assets/fonts/nucleo-outline.woff") format("woff"), font-url("/assets/fonts/nucleo-outline.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
