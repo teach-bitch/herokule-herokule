@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   include ProductsHelper
-  
+
 
 
   # GET /products
@@ -19,7 +19,7 @@ class ProductsController < ApplicationController
     puts @product.categories
     puts "@product.categories" * 30
     set_cats
-  
+
     puts "SHOW" * 30
 
   end
