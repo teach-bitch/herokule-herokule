@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
   resources :users
-  resources :product
+  resources :products
   root 'admin#index'
 end
 
