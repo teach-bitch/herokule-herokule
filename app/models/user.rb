@@ -7,8 +7,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_one :basket
-  has_many :facturations
+  has_one :basket, dependent: :destroy
+  has_many :facturations, dependent: :destroy
 
   validates :first_name,
     presence: true,
