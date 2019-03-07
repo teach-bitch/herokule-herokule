@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_05_090004) do
+ActiveRecord::Schema.define(version: 2019_03_07_154132) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,10 +51,12 @@ ActiveRecord::Schema.define(version: 2019_03_05_090004) do
 
   create_table "facturations", force: :cascade do |t|
     t.bigint "basket_id"
-    t.integer "price"
+    t.decimal "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
     t.index ["basket_id"], name: "index_facturations_on_basket_id"
+    t.index ["user_id"], name: "index_facturations_on_user_id"
   end
 
   create_table "line_items", force: :cascade do |t|
@@ -105,6 +107,7 @@ ActiveRecord::Schema.define(version: 2019_03_05_090004) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "facturations", "users"
   add_foreign_key "line_items", "baskets"
   add_foreign_key "line_items", "products"
 end
