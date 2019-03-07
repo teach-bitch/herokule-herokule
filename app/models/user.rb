@@ -11,20 +11,20 @@ class User < ApplicationRecord
 
   validates :first_name,
     presence: true,
-    length: { in: 2..15 },
-    :format => { :with => /\A[a-zA-Z]+\z/,
-    :message => "Only letters allowed & minimum of 2 characters" }
+    length: { in: 2..30 },
+    :format => { :with => /\A[a-zA-Z-]+\z/,
+    :message => "Seule les lettres et - sont autorisés & 2 caractères minimum" }
 
   validates :last_name,
     presence: true,
-    length: { in: 2..15 },
-    :format => { :with => /\A[a-zA-Z]+\z/,
-    :message => "Only letters allowed & minimum of 2 characters" }
+    length: { in: 2..30 },
+    :format => { :with => /\A[a-zA-Z-\s]+\z/,
+    :message => "Seule les lettres et espaces sont autorisés & 2 caractères minimum" }
 
   validates :username,
     presence: true,
     length: { in: 2..15 },
-    uniqueness: { message: "Nickname already in use" }
+    uniqueness: { message: "Nom d'utilisateur déjà pris" }
 
 
   validates :birthdate,
