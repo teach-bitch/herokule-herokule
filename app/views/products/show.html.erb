@@ -15,7 +15,7 @@
               <% if @product.quantity.to_i > 0 %>
                 <% if user_signed_in? %>
                 <div class="card-collapse justify-content-start">
-                  <span><%= button_to 'Ajouter au panier', line_items_path(product_id: product), class: 'btn btn-dribbble btn-round' %></span>
+                  <span><%= button_to 'Ajouter au panier', line_items_path(product_id: @product), class: 'btn btn-dribbble btn-round' %></span>
                 </div><br/>
                 <% else %>
                 <div class="card-collapse justify-content-start">
