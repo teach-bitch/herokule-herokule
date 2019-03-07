@@ -45,9 +45,6 @@ class LineItemsController < ApplicationController
     @operator = params[:operator]
     respond_to do |format|
       if  @operator == "add"
-        puts "##"*100
-        puts @price
-        puts "##"*100
         @line_item.update(:quantity => @line_item.quantity + 1 )
         @line_item_total = @line_item.product.price * @line_item.quantity.round(2)
         set_price

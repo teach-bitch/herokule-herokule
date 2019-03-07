@@ -19,7 +19,7 @@ class BasketsController < ApplicationController
 
   # GET /baskets/new
   def new
-    @basket = Basket.new
+
   end
 
   # GET /baskets/1/edit
@@ -29,17 +29,7 @@ class BasketsController < ApplicationController
   # POST /baskets
   # POST /baskets.json
   def create
-    @basket = Basket.new(basket_params)
 
-    respond_to do |format|
-      if @basket.save
-        format.html { redirect_to @basket, notice: 'Basket was successfully created.' }
-        format.json { render :show, status: :created, location: @basket }
-      else
-        format.html { render :new }
-        format.json { render json: @basket.errors, status: :unprocessable_entity }
-      end
-    end
   end
 
   # PATCH/PUT /baskets/1
