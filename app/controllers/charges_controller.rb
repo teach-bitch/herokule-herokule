@@ -21,8 +21,13 @@ class ChargesController < ApplicationController
     })
 
     if Stripe::CardError != true
-      Facturation.create(basket_id: @current_basket.id, price: @price, user_id: current_user.id)
-      redirect_to root_path
+      @billing = Facturation.new(basket_id: @current_basket.id, price: @price, user_id: current_user.id)
+      if @billing.save
+        @current_basket = Basket.create(user_id: current_user.id)
+        session[:basket_id] = @current_basket.id
+      end
+
+      redirect_to facturation_path(@billing.id)
     end
 
     rescue Stripe::CardError => e
