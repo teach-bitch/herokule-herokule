@@ -51,7 +51,7 @@
 
                                 <td class="td-number">
 
-                                    <div class="btn-group">
+                                    <div class="btn-group btn-group-basket">
                                       <%= link_to line_item_path(item.id, :operator => "reduce"), method: :PUT, remote: true do %>
                                         <button class="btn btn-info btn-sm btn-round btn-dribbble mr-2">
                                           <i class="now-ui-icons ui-1_simple-delete"></i>
@@ -86,14 +86,7 @@
                                 <td class="td-price" id="total_price">
                                     <%= @price.round(2) %><small>€</small>
                                 </td>
-                                <td colspan="3" class="text-right">
-                                  <%= link_to new_charge_path do %>
-                                    <button type="button" rel="tooltip" class="btn btn-info btn-round btn-dribbble">
-                                        Finaliser l'achatte
-                                        <i class="now-ui-icons arrows-1_minimal-right"></i>
-                                    </button>
-                                  <% end %>
-                                </td>
+                                <%= render 'button' %>
                                 <p><%= link_to "Retour aux produits", products_path, class: 'text-primary' %></p>
                             </tr>
                         </tbody>

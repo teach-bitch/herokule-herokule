@@ -45,7 +45,11 @@ h6.category {
   text-align: start !important; }
 
 div.card-link {
-  text-align: start; }
+  text-align: start;
+  white-space: nowrap;
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden; }
 
 div.price-container {
   margin-top: 0px !important; }
@@ -53,5 +57,22 @@ div.price-container {
 main {
   padding-top: 60px; }
 
-btn-group button {
-  text-decoration: none !important; }
+div.card-signup {
+  margin-bottom: 0px !important; }
+
+div.row-content-signup {
+  align-items: center;
+  width: 100%; }
+
+div.content-signup {
+  margin-top: 62px !important;
+  margin-bottom: 0px !important;
+  height: calc(100vh - 62px) !important; }
+
+div.container-signup {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+a {
+  border: none !important; }

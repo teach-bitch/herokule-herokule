@@ -10,6 +10,9 @@ class FacturationsController < ApplicationController
   # GET /facturations/1
   # GET /facturations/1.json
   def show
+    unless current_user.id == @facturation.user_id
+      redirect_to root_path
+    end
   end
 
   # GET /facturations/new
