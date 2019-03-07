@@ -7,4 +7,7 @@ class Admin::UsersController < AdminController
     @user = User.all
   end
 
+
+
+
 end
