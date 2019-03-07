@@ -99,71 +99,35 @@
         </div>
 
 
-<div class="col-md-10 ml-auto mr-auto">
-                            <h2 class="title">Latest Blogposts 5</h2>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="card card-blog">
-                                        <div class="card-image">
-                                            <a href="#pablo">
-                                                <img class="img rounded" src="assets/img/card-blog2.jpg">
-                                            </a>
-                                        </div>
-                                        <div class="card-body">
-                                            <h6 class="category text-primary">Features</h6>
-                                            <h5 class="card-title">
-                                                That’s One Way To Ditch Your Passenger
-                                            </h5>
-                                            <p class="card-description">
-                                                As near as we can tell, this guy must have thought he was going over backwards and tapped the rear...
-                                            </p>
-                                            <div class="card-footer">
-                                                <div class="author">
-                                                    <img src="assets/img/julie.jpg" alt="..." class="avatar img-raised">
-                                                    <span>Mike John</span>
-                                                </div>
-                                                <div class="stats stats-right">
-                                                    <i class="now-ui-icons tech_watch-time"></i> 5 min read
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                
-                            </div>
-                        </div>
-
-
-
-
-
-
 
         <!-- Carte Produit -->
         <div class="col-md-9">
           <div class="row">
-            <% @products.each do |product| %>
-            <div class="col-lg-4 col-md-6">
-              <div class="card card-product card-plain">
-                <div class="card-image">
-                  <a href="/products/<%= product.id %>">
-                    <img src="http://www.kittycatconnection.org/uploads/1/6/8/9/16894946/header_images/1532312571.jpg" alt="..." />
-                  </a>
-                </div>
-                <div class="card-body">
-                  <a href="/products/<%= product.id %>">
-                    <h4 class="card-title"><%= product.title %></h4>
-                  </a>
-                  <div class="card-body">
-                    <div class="price-container pull-left">
-                      <span class="price"><h5><%= product.price %> €</h5></span>
-                    </div>
+          <% @products.each do |product|%>
+          <div class="col-sm-6 col-md-3">
+            <div class="card card-product">
+              <div class="card-image">
+                <a href="/products/<%= product.id %>">
+                  <img class="img rounded" src="https://static.wamiz.fr/images/animaux/chats/large/sphynx-2901.jpg" />
+                </a>
+              </div>
+              <div class="card-body">
+                <h6 class="category"><%= product.brand %></h6>
+                <h5 class="card-title">
+                  <div class="card-link "><%= product.title %></div>
+                </h5>
+                <div class="card-footer ">
+                  <div class="price-container">
+                    <span class="price "><%= product.price %>€</span>
+                  </div>
+                  <div class="row">
+                    <span><%= button_to 'Voir le produit', product_path(product), class: 'btn btn-neutral', method: :get %></span>
                   </div>
                 </div>
               </div>
             </div>
-            <% end %>
+          </div>
+          <% end%>
           </div>
         </div>
         <!-- Fin de la Carte Produit -->
