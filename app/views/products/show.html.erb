@@ -11,7 +11,7 @@
             <div class="col-md-5 ml-auto mr-auto">
               <h2 class="title"><%= @product.title %></h2>
               <h5 class="category"><%= @product.brand %> </h5>
-              <h2 class="main-price"><%= @product.price %>€</h2>
+              <h2 class="main-price"><%= @product.price %><small>€</small></h2>
               <% if @product.quantity.to_i > 0 %>
                 <% if user_signed_in? %>
                 <div class="card-collapse justify-content-start">
@@ -55,7 +55,7 @@
         <h3 class="title text-center">D'autres produits de la même catégorie ?</h3>
         <div class="row">
           <% @the_cats.sample(4).each do |product|%>
-          
+
           <div class="col-lg-4 col-md-6">
             <div class="card card-product">
               <div class="card-image">
@@ -81,7 +81,7 @@
           </div>
           <% end%>
           <!--  les anciennes cards fake avec les anciennes images
-          
+
           <img class="img rounded" src="https://static.wamiz.fr/images/animaux/chats/large/sphynx-2903.jpg" />
           <img class="img rounded" src="http://www.totems-scouts.be/pics/totems/1394650360_sphynx.jpg" />
           <img class="img rounded" src="https://static.wamiz.fr/images/animaux/chats/large/sphynx-2902.jpg" />
