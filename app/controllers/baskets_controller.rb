@@ -12,7 +12,9 @@ class BasketsController < ApplicationController
   # GET /baskets/1
   # GET /baskets/1.json
   def show
-
+    unless @current_basket.id == Basket.find(params[:id]).id
+      redirect_to root_path
+    end
   end
 
   # GET /baskets/new
