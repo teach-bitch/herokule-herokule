@@ -1,13 +1,14 @@
-class Admin::UsersController < AdminController
+class Admin::ProductsController < AdminController
 
 
   # Methods omitted
   def index
+    
     puts "$" * 60
-    puts "USER ADMIN INDEX"
+    puts "PRODUCT ADMIN INDEX"
     puts params
     puts "$" * 60
-    @user = User.all
+    @product = Product.all
 
   end
 
