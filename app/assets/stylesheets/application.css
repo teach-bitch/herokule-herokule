@@ -104,7 +104,8 @@ a {
   top: 82px; }
 
   @font-face {
-  font-family: 'Nucleo Outline';
-  src: font-url(fonts/nucleo-outline);
-  font-weight: normal;
-  font-style: normal; }
+    font-family: 'Nucleo Outline';
+    src: url("fonts/nucleo-outline.eot");
+    src: url("fonts/nucleo-outline.eot") format("embedded-opentype"), url("fonts/nucleo-outline.woff2") format("woff2"), url("fonts/nucleo-outline.woff") format("woff"), url("fonts/nucleo-outline.ttf") format("truetype"), url("fonts/nucleo-outline.svg") format("svg");
+    font-weight: normal;
+    font-style: normal; }
