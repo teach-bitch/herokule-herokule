@@ -6,7 +6,6 @@
 
   <div class="section">
     <div class="container">
-
       <div class="row">
         <div class="col-md-3">
           <div class="collapse-panel">
@@ -36,6 +35,8 @@
                 </div>
               </div>
               <!-- Checkbox 'Marques' -->
+
+                <a class="btn btn-warning btn-sm" <%= link_to "creer un produit",  new_admin_product_path %></a>
               <div class="card card-refine card-plain">
                 <div class="card-header" role="tab" id="headingTwo">
                   <h6 class="mb-0">
@@ -47,12 +48,14 @@
                 </div>
                 <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
                   <div class="card-body">
+
                     <div class="checkbox">
                       <input id="checkbox_brand" type="checkbox">
                       <label for="checkbox_brand">
                         Toutes <3
                       </label>
                     </div>
+
                     <!-- Boucle pour les marques -->
                     <% @products.each do |product| %>
                     <div class="checkbox">
@@ -68,6 +71,7 @@
               </div>
               <!-- Fin Checkbox 'Marques' -->
               <!-- Checkbox 'Catégories' -->
+
               <div class="card card-refine card-plain">
                 <div class="card-header" role="tab" id="headingfour">
                   <h6 class="mb-0">
@@ -132,7 +136,10 @@
                     <span class="price "><%= product.price %>€</span>
                   </div>
                   <div class="row">
-                    <span><%= button_to "changer l'image", admin_product_path(product), class: 'btn btn-neutral', method: :get %></span>
+
+                    <a class="btn btn-primary btn-sm" <%= link_to "edit", edit_admin_product_path(product) %></a>
+                    <a class="btn btn-danger btn-sm" href="/admin/products/<%= product.id %>" data-confirm="Are you sure ?" data-method="delete" role="button"> delete</a>
+
                   </div>
                 </div>
               </div>

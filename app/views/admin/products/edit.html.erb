@@ -1,19 +1,22 @@
-<h1>ZONE ADMIN PRODUCTS NEW</h1><br>
+
+<h1>HELLO</h1>
+
 <div class="container">
   <div class="row ml-3">
       <div class="offset-md-3 col-md-6 offset-md-3">
-          <%= form_tag(admin_products_path, method: "post", class: "form", id: "product-form", remote: true)  do %>
+          <%= form_tag url_for(action: 'update'), method: "patch" do %>
               <div class="form-group">
                   <%= label_tag "Nom du produit :", nil, class: "form-label" %>
-                  <%= text_field_tag :title, nil, class: "form-control", placeholder: "Chat-perlipopette" %>
+                  <%= text_field_tag :title, @product.title, class: "form-control", placeholder: "Chat-perlipopette" %>
               </div>
               <div class="form-group">
                   <%= label_tag "Description :", nil, class: "form-label" %>
-                  <%= text_area_tag :description, nil, class: "form-control", placeholder: "Description" %>
+                  <%= text_area_tag :description, @product.description, class: "form-control", placeholder: "Description" %>
               </div>
+
               <div class="form-group">
                   <%= label_tag "Marque :", nil, class: "form-label" %>
-                  <%= text_field_tag :brand, nil, class: "form-control", placeholder: "Chat-gucci" %>
+                  <%= text_field_tag :brand, @product.brand, class: "form-control", placeholder: "Chat-gucci" %>
               </div>
               <div class="form-group">
                   <%= label_tag "C'est pour lequel de tes projets ?", nil, class: "form-label" %>
@@ -21,21 +24,22 @@
               </div>
               <div class="form-group">
                   <%= label_tag "Prix :", nil, class: "form-label" %>
-                  <%= text_field_tag :price, nil, class: "form-control", placeholder: "69" %>
+                  <%= text_field_tag :price, @product.price, class: "form-control", placeholder: "69" %>
               </div>
               <div class="form-group">
                   <%= label_tag "Quantité :", nil, class: "form-label" %>
-                  <%= text_field_tag :quantity, nil, class: "form-control", placeholder: "69" %>
+                  <%= text_field_tag :quantity, @product.quantity, class: "form-control", placeholder: "69" %>
               </div>
               <div class="form-group">
                   <%= label_tag "Référence :", nil, class: "form-label" %>
-                  <%= text_field_tag :reference, nil, class: "form-control", placeholder: "69" %>
+                  <%= text_field_tag :reference, @product.reference, class: "form-control", placeholder: "69" %>
               </div>
 
               <div class="text-center">
-                  <%= submit_tag("Créer ce produit", class: "btn btn-start-order") %>
+                  <%= submit_tag("Editer ce produit", class: "btn btn-start-order") %>
               </div>
           <%end%>
       </div>
+
   </div>
 </div>
