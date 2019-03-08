@@ -67,3 +67,13 @@
 //         )
 //     }
 // })
+
+// window.addEventListener('beforeunload', (e) => {
+
+//     if (e.target.url === `https://chat-perlipopette.herokuapp.com/products` || e.target.url === "http://localhost:3000/products") {
+//         document.removeEventListener("scroll");
+//     }
+//     console.log(e)
+
+
+// });
