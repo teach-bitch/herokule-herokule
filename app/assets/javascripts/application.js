@@ -55,7 +55,7 @@ document.addEventListener("scroll", (e) => {
             panel.classList.add("sticky");
             /** we apply the original width (computed.width) (in a string ``) of the panel element to the sticky element (panel.style.width)*/
             panel.style.width = `${computed_data.width.toString()}px`;
-            console.log(computed_data)
+
             /** else remove class sticky */
         } else(
             panel.classList.remove("sticky")

@@ -76,7 +76,7 @@
                     <%= @price.round(2) %><small>€</small>
                   </td>
                   <td colspan="3" class="text-right">
-                    <%= form_tag url_for(action: 'create'), method: "post" do %>
+                    <%= form_tag charges_path do %>
 
                     <article>
                       <% if flash[:error].present? %>
@@ -88,9 +88,12 @@
                       <% end %>
                     </article>
                     <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                      data-description="Buy the ticket" data-amount="<%= @amount %>" data-locale="auto"></script>
+                      data-description="A month's subscription" data-amount="<%= @amount %>" data-currency="eur"
+                      data-locale="auto"></script>
                     <% end %>
                   </td>
+
+
 
                   <p>
                     <%= link_to "Retour au panier", basket_path(@current_basket.id) , class: 'text-primary' %>
