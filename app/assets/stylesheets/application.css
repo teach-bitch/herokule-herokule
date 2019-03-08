@@ -105,6 +105,6 @@ a {
 
   @font-face {
     font-family: 'Nucleo Outline';
-    src: url("fonts/nucleo-outline.eot");
+    src: url("fonts/nucleo-outline.woff2");
     font-weight: normal;
     font-style: normal; }
