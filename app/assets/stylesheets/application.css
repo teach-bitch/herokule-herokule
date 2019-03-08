@@ -14,6 +14,8 @@
 
 *= require css/bootstrap.min
 *= require css/now-ui-kit
+
+
  */
 input.btn-neutral {
   background-color: transparent; }
@@ -96,13 +98,6 @@ a {
     font-size: 0.8571em !important;
     line-height: 1.35em !important;
     font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif !important; }
-
-@font-face {
-  font-family: 'nucleo-outline';
-  src: font-url("/assets/fonts/nucleo-outline.eot");
-  src: font-url("/assets/fonts/nucleo-outline.eot?#iefix") format("embedded-opentype"), font-url("/assets/fonts/nucleo-outline.woff2") format("woff2"), font-url("/assets/fonts/nucleo-outline.woff") format("woff"), font-url("/assets/fonts/nucleo-outline.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal; }
 
 .sticky {
   position: fixed;
