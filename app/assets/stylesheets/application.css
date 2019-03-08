@@ -102,3 +102,9 @@ a {
 .sticky {
   position: fixed;
   top: 82px; }
+
+  @font-face {
+  font-family: 'Nucleo Outline';
+  src: <%= font_url('fonts/nucleo-outline') %>;
+  font-weight: normal;
+  font-style: normal; }
