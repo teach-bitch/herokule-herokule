@@ -103,9 +103,12 @@ a {
   position: fixed;
   top: 82px; }
 
-@font-face {
-  font-family: 'Nucleo Outline';
-  src: font-url("../fonts/nucleo-outline.eot");
-  src: font-url("../fonts/nucleo-outline.eot") format("embedded-opentype"), font-url("../fonts/nucleo-outline.woff2") format("woff2"), font-url("../fonts/nucleo-outline.woff") format("woff"), font-url("../fonts/nucleo-outline.ttf") format("truetype"), font-url("../fonts/nucleo-outline.svg") format("svg");
-  font-weight: normal;
-  font-style: normal; }
+  @font-face {
+    font-family: 'Nucleo Outline';
+    src: font-url('nucleo-outline.eot');
+    src: url(font-path('nucleo-outline.eot') + '?#iefix') format('embedded-opentype'),
+         font-url('nucleo-outline.woff') format('woff'),
+         font-url('nucleo-outline.woff2') format('woff2'),
+         font-url('nucleo-outline.ttf') format('truetype'),
+         url(font-path('nucleo-outline.svg') + '#open_sans') format('svg');
+  }
