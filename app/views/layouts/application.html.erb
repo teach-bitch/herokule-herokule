@@ -1,27 +1,23 @@
 <!DOCTYPE html>
-<html>
+ <html>
   <head>
-    <title>CatAclysmisassions</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
-
-
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+   <%= render 'layouts/head' %>
   </head>
-
+  
   <body>
+   <header>
     <%= render 'layouts/navbar' %>
-    <%= yield %>
-    <%= render 'layouts/footer' %>
-  </body>
+   </header>
 
+    <!-- Alerts -->
+     <%= render 'layouts/alerts' %>
+    <!-- Alerts -->
+
+<%= yield %>
+
+    <!-- Footer -->
+     <%= render 'layouts/footer' %>
+    <!-- Footer -->
+
+  </body>
 </html>
