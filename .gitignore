@@ -29,5 +29,5 @@
 .env
 node_modules
 sass
-gulp.js
+gulpfile.js
 package.json
